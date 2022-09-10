@@ -1,0 +1,15 @@
+<%- include('header'); -%>
+<div class="container my-3">
+  <form method="post" action="/update/<%= data._id %>">
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Edit Notes</label>
+      <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" value="<%= data.note %>" name="note"  id="exampleFormControlTextarea1">
+      <!-- <textarea class="form-control" value="<%= data.note %> placeholder="Leave a comment here" id="floatingTextarea"></textarea> -->
+    </div>
+    <a href="/" class="btn btn-outline-info"> Home</a>
+    
+    <button type="submit" class="btn btn-outline-dark">Update Note</button>
+  </form>
+
+</div>
+<%- include('footer'); -%>

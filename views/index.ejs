@@ -1,0 +1,46 @@
+<%- include('header'); -%>
+<div class="container my-3">
+  <!-- <div class="row"> -->
+  
+  <form method="post">
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Add Notes</label>
+      <textarea class="form-control" onkeyup="sucess()" value="deepak" name="note" id="textid" rows="5"></textarea>
+    </div>
+   
+    <button  type="submit" id="btn" class="btn btn-outline-dark">Add Note</button>
+  </form>
+
+
+<div class="row">
+  <% data.forEach(item => { %>
+  <div class="col-sm-6 my-2">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><%= item.note %> </p>
+        <a href="/edit/<%= item._id %> "  class="card-link">Edit</a>
+        <a href="/delete/<%= item._id %>" class="card-link" >Delete</a>
+      </div>
+    </div>
+  </div>
+  <%  }); %> 
+
+
+</div>
+  
+</div>
+</div>
+<script>
+  function sucess() {
+  let textid = document.getElementById("textid")
+
+  if (textid.value=="") {
+    document.getElementById("btn").disabled=true
+  }
+  else{
+    document.getElementById("btn").disabled=false
+  }
+}
+sucess()
+</script>
+<%- include('footer'); -%>
